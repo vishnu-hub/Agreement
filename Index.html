@@ -1,0 +1,1483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Friends With Benefits — Muskan</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+:root {
+  --bg: #110c11;
+  --card: #1b141a;
+  --card-hover: #211920;
+  --text: #f8eef4;
+  --muted: #b9aab4;
+  --accent: #e99ab8;
+  --border: rgba(255,255,255,0.09);
+  --success: #9ed6b3;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background:
+    radial-gradient(
+      circle at 15% 5%,
+      rgba(233,154,184,0.13),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 90% 90%,
+      rgba(233,154,184,0.08),
+      transparent 30%
+    ),
+    var(--bg);
+
+  color: var(--text);
+  font-family: "DM Sans", sans-serif;
+  line-height: 1.7;
+  min-height: 100vh;
+}
+
+.container {
+  width: min(900px, 92%);
+  margin: auto;
+  padding: 65px 0 80px;
+}
+
+/* HERO */
+
+.hero {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 11px;
+  color: var(--accent);
+  margin-bottom: 18px;
+}
+
+h1 {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(42px, 8vw, 72px);
+  line-height: 1.05;
+  margin-bottom: 18px;
+}
+
+.subtitle {
+  max-width: 620px;
+  margin: auto;
+  color: var(--muted);
+  font-size: 16px;
+}
+
+/* PHOTO */
+
+.photo-slot {
+  width: 210px;
+  height: 210px;
+  border-radius: 50%;
+  margin: 38px auto;
+
+  border: 1px solid rgba(233,154,184,0.35);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(233,154,184,0.13),
+      rgba(255,255,255,0.02)
+    );
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+}
+
+.photo-slot img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.photo-placeholder {
+  text-align: center;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.photo-placeholder span {
+  display: block;
+  font-size: 30px;
+  margin-bottom: 8px;
+}
+
+/* INTRO */
+
+.intro {
+  max-width: 650px;
+  margin: auto;
+  text-align: center;
+  color: var(--muted);
+}
+
+.intro strong {
+  color: #f4c6d7;
+}
+
+/* INSTRUCTIONS */
+
+.instructions {
+  margin: 35px 0;
+
+  padding: 20px 22px;
+
+  border-radius: 16px;
+
+  background: rgba(233,154,184,0.06);
+  border: 1px solid rgba(233,154,184,0.15);
+
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.instructions strong {
+  color: var(--accent);
+}
+
+/* SECTIONS */
+
+.section {
+  background: rgba(255,255,255,0.025);
+
+  border: 1px solid var(--border);
+
+  border-radius: 22px;
+
+  padding: 30px;
+
+  margin-bottom: 18px;
+
+  transition: 0.25s ease;
+}
+
+.section:hover {
+  background: var(--card-hover);
+  border-color: rgba(233,154,184,0.20);
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.number {
+  width: 38px;
+  height: 38px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(233,154,184,0.12);
+
+  color: var(--accent);
+
+  font-size: 13px;
+
+  font-weight: 600;
+}
+
+h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 23px;
+}
+
+.section ul {
+  list-style: none;
+  padding-left: 54px;
+}
+
+.section li {
+  position: relative;
+  color: var(--muted);
+  margin: 9px 0;
+}
+
+.section li::before {
+  content: "•";
+
+  position: absolute;
+
+  left: -18px;
+
+  color: var(--accent);
+}
+
+/* EDIT */
+
+.edit-area {
+  margin-top: 24px;
+
+  padding-top: 20px;
+
+  border-top: 1px solid var(--border);
+}
+
+.edit-check {
+  display: flex;
+
+  gap: 10px;
+
+  align-items: center;
+
+  color: #d9cbd3;
+
+  font-size: 13px;
+
+  cursor: pointer;
+}
+
+.edit-check input {
+  width: 17px;
+  height: 17px;
+
+  accent-color: var(--accent);
+
+  cursor: pointer;
+}
+
+.edit-box {
+  display: none;
+
+  margin-top: 14px;
+}
+
+.edit-box.show {
+  display: block;
+}
+
+.edit-box textarea {
+  width: 100%;
+
+  min-height: 95px;
+
+  resize: vertical;
+
+  padding: 13px 15px;
+
+  border-radius: 12px;
+
+  border: 1px solid rgba(233,154,184,0.25);
+
+  background: rgba(0,0,0,0.18);
+
+  color: var(--text);
+
+  font-family: inherit;
+
+  font-size: 13px;
+
+  outline: none;
+}
+
+.edit-box textarea:focus {
+  border-color: var(--accent);
+}
+
+.edit-box small {
+  display: block;
+
+  margin-top: 7px;
+
+  color: #84757f;
+}
+
+/* GOLDEN RULE */
+
+.golden {
+  margin: 45px 0;
+
+  padding: 38px 30px;
+
+  border-radius: 24px;
+
+  text-align: center;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(233,154,184,0.13),
+      rgba(233,154,184,0.035)
+    );
+
+  border: 1px solid rgba(233,154,184,0.25);
+}
+
+.golden-label {
+  text-transform: uppercase;
+
+  letter-spacing: 3px;
+
+  font-size: 11px;
+
+  color: var(--accent);
+
+  margin-bottom: 12px;
+}
+
+.golden p {
+  font-family: "Playfair Display", serif;
+
+  font-size: clamp(20px, 4vw, 27px);
+
+  line-height: 1.45;
+}
+
+/* ACKNOWLEDGEMENT */
+
+.acknowledge {
+  background: var(--card);
+
+  border: 1px solid var(--border);
+
+  border-radius: 25px;
+
+  padding: 35px;
+
+  margin-top: 45px;
+}
+
+.acknowledge h2 {
+  margin-bottom: 10px;
+}
+
+.acknowledge > p {
+  color: var(--muted);
+
+  font-size: 14px;
+
+  margin-bottom: 25px;
+}
+
+.checkbox-row {
+  display: flex;
+
+  gap: 12px;
+
+  align-items: flex-start;
+
+  cursor: pointer;
+
+  margin-bottom: 20px;
+}
+
+.checkbox-row input {
+  width: 19px;
+
+  height: 19px;
+
+  accent-color: var(--accent);
+
+  margin-top: 4px;
+
+  cursor: pointer;
+}
+
+.checkbox-row span {
+  color: #d9cbd3;
+
+  font-size: 14px;
+}
+
+.name-input {
+  width: 100%;
+
+  padding: 15px 17px;
+
+  border-radius: 12px;
+
+  border: 1px solid var(--border);
+
+  background: rgba(255,255,255,0.035);
+
+  color: var(--text);
+
+  outline: none;
+
+  font-family: inherit;
+
+  font-size: 14px;
+
+  margin-bottom: 15px;
+}
+
+.name-input:focus {
+  border-color: rgba(233,154,184,0.5);
+}
+
+button {
+  width: 100%;
+
+  padding: 16px;
+
+  border: none;
+
+  border-radius: 12px;
+
+  background: var(--accent);
+
+  color: #24141c;
+
+  font-family: inherit;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+button:hover {
+  transform: translateY(-1px);
+
+  filter: brightness(1.06);
+}
+
+button:disabled {
+  opacity: 0.4;
+
+  cursor: not-allowed;
+
+  transform: none;
+}
+
+.success {
+  display: none;
+
+  text-align: center;
+
+  padding: 25px;
+
+  color: var(--success);
+}
+
+.success .heart {
+  font-size: 35px;
+
+  margin-bottom: 10px;
+}
+
+footer {
+  text-align: center;
+
+  margin-top: 45px;
+
+  color: #766a72;
+
+  font-size: 12px;
+}
+
+@media (max-width: 600px) {
+
+  .container {
+    padding-top: 45px;
+  }
+
+  .section {
+    padding: 24px 20px;
+  }
+
+  .section ul {
+    padding-left: 42px;
+  }
+
+  .acknowledge {
+    padding: 25px 20px;
+  }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+<div class="container">
+
+
+<header class="hero">
+
+  <div class="eyebrow">
+    A Mutual Understanding
+  </div>
+
+  <h1>
+    Friends With Benefits
+  </h1>
+
+  <p class="subtitle">
+    A few simple ground rules for keeping things fun,
+    comfortable, respectful, and uncomplicated.
+  </p>
+
+
+  <!--
+  =====================================================
+  YOUR PHOTO
+
+  Later, upload your image to GitHub and change this to:
+
+  <img src="muskan.jpg" alt="Muskan">
+
+  =====================================================
+  -->
+
+  <div class="photo-slot">
+
+    <div class="photo-placeholder">
+      <span>♡</span>
+      Muskan's photo goes here
+    </div>
+
+  </div>
+
+
+  <div class="intro">
+
+    This isn't a legal contract.
+    It's simply an understanding between
+    <strong>two people who want to keep things honest and respectful.</strong>
+
+  </div>
+
+</header>
+
+
+<div class="instructions">
+
+  <strong>Before acknowledging:</strong>
+
+  Read everything properly.
+
+  If there's anything you don't agree with or want changed,
+  tick <strong>“I'd like to change something here”</strong>
+  underneath that section and tell me what you'd prefer.
+
+  <br><br>
+
+  Nothing is assumed.
+  We can discuss and change anything before agreeing.
+
+</div>
+
+
+<!-- 01 -->
+
+<section class="section">
+
+  <div class="section-header">
+
+    <div class="number">01</div>
+
+    <h2>Consent</h2>
+
+  </div>
+
+  <ul>
+
+    <li>
+      Everything is mutual and consensual every time.
+    </li>
+
+    <li>
+      Either person can say no or stop at any moment.
+    </li>
+
+    <li>
+      No pressure, guilt-tripping, or assuming consent from previous occasions.
+    </li>
+
+  </ul>
+
+
+  <div class="edit-area">
+
+    <label class="edit-check">
+
+      <input
+        type="checkbox"
+        class="edit-toggle"
+        data-section="Consent"
+      >
+
+      I'd like to change something here
+
+    </label>
+
+
+    <div class="edit-box">
+
+      <textarea
+        data-comment="Consent"
+        placeholder="What would you like to change, remove, add, or discuss?"
+      ></textarea>
+
+      <small>
+        You don't need to phrase it perfectly.
+        Just tell me what you mean.
+      </small>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- 02 -->
+
+<section class="section">
+
+  <div class="section-header">
+
+    <div class="number">02</div>
+
+    <h2>Physical Intimacy</h2>
+
+  </div>
+
+  <ul>
+
+    <li>
+      Kissing, cuddling, making out, and other mutually agreed intimacy are allowed.
+    </li>
+
+    <li>
+      Either person can initiate or decline.
+    </li>
+
+    <li>
+      Boundaries can be changed at any time.
+    </li>
+
+  </ul>
+
+
+  <div class="edit-area">
+
+    <label class="edit-check">
+
+      <input
+        type="checkbox"
+        class="edit-toggle"
+        data-section="Physical Intimacy"
+      >
+
+      I'd like to change something here
+
+    </label>
+
+
+    <div class="edit-box">
+
+      <textarea
+        data-comment="Physical Intimacy"
+        placeholder="What would you like to change, remove, add, or discuss?"
+      ></textarea>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- 03 -->
+
+<section class="section">
+
+  <div class="section-header">
+
+    <div class="number">03</div>
+
+    <h2>Roleplay & Fantasies</h2>
+
+  </div>
+
+  <ul>
+
+    <li>
+      Roleplay, fantasies, costumes, and agreed scenarios are allowed only when both are comfortable.
+    </li>
+
+    <li>
+      Discuss boundaries beforehand, especially anything new or potentially sensitive.
+    </li>
+
+    <li>
+      Either person can stop a scenario immediately.
+    </li>
+
+  </ul>
+
+
+  <div class="edit-area">
+
+    <label class="edit-check">
+
+      <input
+        type="checkbox"
+        class="edit-toggle"
+        data-section="Roleplay & Fantasies"
+      >
+
+      I'd like to change something here
+
+    </label>
+
+
+    <div class="edit-box">
+
+      <textarea
+        data-comment="Roleplay & Fantasies"
+        placeholder="What would you like to change, remove, add, or discuss?"
+      ></textarea>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- 04 -->
+
+<section class="section">
+
+  <div class="section-header">
+
+    <div class="number">04</div>
+
+    <h2>Photos & Nudes</h2>
+
+  </div>
+
+  <ul>
+
+    <li>
+      Intimate photos/videos may only be created or exchanged with explicit consent.
+    </li>
+
+    <li>
+      Never screenshot, save, forward, post, or show intimate content to anyone else without permission.
+    </li>
+
+    <li>
+      No recording during intimate moments unless both people explicitly agree beforehand.
+    </li>
+
+    <li>
+      Either person can ask for content to be deleted at any time,
+      and the other person should respect the request.
+    </li>
+
+  </ul>
+
+
+  <div class="edit-area">
+
+    <label class="edit-check">
+
+      <input
+        type="checkbox"
+        class="edit-toggle"
+        data-section="Photos & Nudes"
+      >
+
+      I'd like to change something here
+
+    </label>
+
+
+    <div class="edit-box">
+
+      <textarea
+        data-comment="Photos & Nudes"
+        placeholder="What would you like to change, remove, add, or discuss?"
+      ></textarea>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- 05 -->
+
+<section class="section">
+
+  <div class="section-header">
+
+    <div class="number">05</div>
+
+    <h2>Other People</h2>
+
+  </div>
+
+  <ul>
+
+    <li>
+      Both people remain free to date or see others unless exclusivity is explicitly agreed.
+    </li>
+
+    <li>
+      No bringing another person into the arrangement without discussing it first.
+    </li>
+
+    <li>
+      Be honest about anything that could affect the other person's consent or sexual health.
+    </li>
+
+  </ul>
+
+
+  <div class="edit-area">
+
+    <label class="edit-check">
+
+      <input
+        type="checkbox"
+        class="edit-toggle"
+        data-section="Other People"
+      >
+
+      I'd like to change something here
+
+    </label>
+
+
+    <div class="edit-box">
+
+      <textarea
+        data-comment="Other People"
+        placeholder="What would you like to change, remove, add, or discuss?"
+      ></textarea>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- 06 -->
+
+<section class="section">
+
+  <div class="section-header">
+
+    <div class="number">06</div>
+
+    <h2>Emotional Boundaries</h2>
+
+  </div>
+
+  <ul>
+
+    <li>
+      This arrangement does not automatically mean a relationship.
+    </li>
+
+    <li>
+      No expectations of constant texting, dates, gifts,
+      or relationship-level commitment.
+    </li>
+
+    <li>
+      If feelings develop, communicate honestly rather than becoming
+      possessive or distant without explanation.
+    </li>
+
+  </ul>
+
+
+  <div class="edit-area">
+
+    <label class="edit-check">
+
+      <input
+        type="checkbox"
+        class="edit-toggle"
+        data-section="Emotional Boundaries"
+      >
+
+      I'd like to change something here
+
+    </label>
+
+
+    <div class="edit-box">
+
+      <textarea
+        data-comment="Emotional Boundaries"
+        placeholder="What would you like to change, remove, add, or discuss?"
+      ></textarea>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- 07 -->
+
+<section class="section">
+
+  <div class="section-header">
+
+    <div class="number">07</div>
+
+    <h2>Privacy</h2>
+
+  </div>
+
+  <ul>
+
+    <li>
+      What happens between us stays between us.
+    </li>
+
+    <li>
+      No gossiping, sharing intimate details,
+      or showing messages/photos to friends.
+    </li>
+
+    <li>
+      No using private information against each other.
+    </li>
+
+  </ul>
+
+
+  <div class="edit-area">
+
+    <label class="edit-check">
+
+      <input
+        type="checkbox"
+        class="edit-toggle"
+        data-section="Privacy"
+      >
+
+      I'd like to change something here
+
+    </label>
+
+
+    <div class="edit-box">
+
+      <textarea
+        data-comment="Privacy"
+        placeholder="What would you like to change, remove, add, or discuss?"
+      ></textarea>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- 08 -->
+
+<section class="section">
+
+  <div class="section-header">
+
+    <div class="number">08</div>
+
+    <h2>Communication</h2>
+
+  </div>
+
+  <ul>
+
+    <li>
+      Talk openly about boundaries, comfort levels,
+      protection, and expectations.
+    </li>
+
+    <li>
+      If something feels uncomfortable, say it.
+    </li>
+
+    <li>
+      No punishment or resentment for setting a boundary.
+    </li>
+
+  </ul>
+
+
+  <div class="edit-area">
+
+    <label class="edit-check">
+
+      <input
+        type="checkbox"
+        class="edit-toggle"
+        data-section="Communication"
+      >
+
+      I'd like to change something here
+
+    </label>
+
+
+    <div class="edit-box">
+
+      <textarea
+        data-comment="Communication"
+        placeholder="What would you like to change, remove, add, or discuss?"
+      ></textarea>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- 09 -->
+
+<section class="section">
+
+  <div class="section-header">
+
+    <div class="number">09</div>
+
+    <h2>Ending the Arrangement</h2>
+
+  </div>
+
+  <ul>
+
+    <li>
+      Either person can end the FWB arrangement at any time and for any reason.
+    </li>
+
+    <li>
+      No guilt, arguments, retaliation, or pressure.
+    </li>
+
+    <li>
+      After ending it, both respect each other's space and privacy.
+    </li>
+
+  </ul>
+
+
+  <div class="edit-area">
+
+    <label class="edit-check">
+
+      <input
+        type="checkbox"
+        class="edit-toggle"
+        data-section="Ending the Arrangement"
+      >
+
+      I'd like to change something here
+
+    </label>
+
+
+    <div class="edit-box">
+
+      <textarea
+        data-comment="Ending the Arrangement"
+        placeholder="What would you like to change, remove, add, or discuss?"
+      ></textarea>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- GOLDEN RULE -->
+
+<section class="golden">
+
+  <div class="golden-label">
+    The Golden Rule
+  </div>
+
+  <p>
+    “If it’s not clearly agreed upon, ask first.
+    Consent, privacy, and respect come before everything else.”
+  </p>
+
+</section>
+
+
+<!-- ACKNOWLEDGEMENT -->
+
+<section class="acknowledge">
+
+  <h2>
+    Digital Acknowledgement
+  </h2>
+
+  <p>
+    If you'd like to change anything, please mark the relevant
+    sections above and leave your thoughts.
+    We'll discuss those before considering the agreement final.
+  </p>
+
+
+  <label class="checkbox-row">
+
+    <input
+      type="checkbox"
+      id="agree"
+    >
+
+    <span>
+      I have read and understood the ground rules above.
+      I am comfortable with them as written, except for any
+      changes I have specifically requested above.
+    </span>
+
+  </label>
+
+
+  <input
+    type="text"
+    id="name"
+    class="name-input"
+    placeholder="Your name"
+    required
+  >
+
+
+  <button
+    id="ackButton"
+    type="button"
+    disabled
+  >
+    Acknowledge & Send ✦
+  </button>
+
+
+  <div
+    class="success"
+    id="success"
+  >
+
+    <div class="heart">
+      ♡
+    </div>
+
+    <strong>
+      Acknowledgement sent.
+    </strong>
+
+    <p>
+      Thank you. Everything has been noted.
+    </p>
+
+  </div>
+
+</section>
+
+
+<footer>
+
+  Made with good intentions · Mutual · Respectful · No pressure
+
+</footer>
+
+</div>
+
+
+<script>
+
+/* =====================================================
+   EDIT BOXES
+===================================================== */
+
+document.querySelectorAll(".edit-toggle").forEach(toggle => {
+
+  toggle.addEventListener("change", function() {
+
+    const editBox =
+      this.closest(".edit-area")
+      .querySelector(".edit-box");
+
+    if (this.checked) {
+
+      editBox.classList.add("show");
+
+    } else {
+
+      editBox.classList.remove("show");
+
+      editBox.querySelector("textarea").value = "";
+
+    }
+
+  });
+
+});
+
+
+/* =====================================================
+   ACKNOWLEDGEMENT BUTTON
+===================================================== */
+
+const checkbox =
+  document.getElementById("agree");
+
+const nameInput =
+  document.getElementById("name");
+
+const button =
+  document.getElementById("ackButton");
+
+const success =
+  document.getElementById("success");
+
+
+function updateButton() {
+
+  button.disabled =
+    !checkbox.checked ||
+    nameInput.value.trim().length === 0;
+
+}
+
+
+checkbox.addEventListener(
+  "change",
+  updateButton
+);
+
+nameInput.addEventListener(
+  "input",
+  updateButton
+);
+
+
+/* =====================================================
+   SEND EMAIL
+===================================================== */
+
+button.addEventListener("click", async () => {
+
+  if (
+    !checkbox.checked ||
+    !nameInput.value.trim()
+  ) {
+
+    return;
+
+  }
+
+
+  const name =
+    nameInput.value.trim();
+
+
+  /* Collect changes */
+
+  let requestedChanges = [];
+
+
+  document.querySelectorAll(".edit-toggle").forEach(toggle => {
+
+    if (toggle.checked) {
+
+      const section =
+        toggle.dataset.section;
+
+      const textarea =
+        toggle
+        .closest(".edit-area")
+        .querySelector("textarea");
+
+      const comment =
+        textarea.value.trim();
+
+
+      requestedChanges.push(
+        `SECTION: ${section}\n` +
+        `COMMENT: ${comment || "No specific comment provided."}`
+      );
+
+    }
+
+  });
+
+
+  const changesText =
+    requestedChanges.length > 0
+    ? requestedChanges.join("\n\n")
+    : "No changes requested.";
+
+
+  /* Build email */
+
+  const message = `
+
+FRIENDS WITH BENEFITS — DIGITAL ACKNOWLEDGEMENT
+
+Name:
+${name}
+
+Date & Time:
+${new Date().toLocaleString("en-IN")}
+
+Status:
+Acknowledged
+
+
+========================================
+
+REQUESTED CHANGES
+
+${changesText}
+
+
+========================================
+
+The person submitting this acknowledgement
+confirmed that they have read and understood
+the ground rules.
+
+`;
+
+
+  button.disabled = true;
+
+  button.innerText = "Sending…";
+
+
+  try {
+
+    const response = await fetch(
+      "https://formsubmit.co/ajax/vishnupnambiar@yahoo.in",
+      {
+
+        method: "POST",
+
+        headers: {
+          "Content-Type":
+            "application/json",
+
+          "Accept":
+            "application/json"
+        },
+
+        body: JSON.stringify({
+
+          _subject:
+            `FWB Agreement — ${name}`,
+
+          name:
+            name,
+
+          message:
+            message,
+
+          _template:
+            "table",
+
+          _captcha:
+            "false"
+
+        })
+
+      }
+    );
+
+
+    if (!response.ok) {
+
+      throw new Error(
+        "Form submission failed"
+      );
+
+    }
+
+
+    /* Success */
+
+    document.querySelector(
+      ".checkbox-row"
+    ).style.display = "none";
+
+
+    nameInput.style.display =
+      "none";
+
+
+    button.style.display =
+      "none";
+
+
+    success.style.display =
+      "block";
+
+
+  }
+
+  catch (error) {
+
+    console.error(error);
+
+    button.disabled = false;
+
+    button.innerText =
+      "Acknowledge & Send ✦";
+
+
+    alert(
+      "The acknowledgement could not be sent. Please try again."
+    );
+
+  }
+
+});
+
+</script>
+
+</body>
+</html>
